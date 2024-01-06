@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALL ABOUT GREEN</title>
-     <style>
+    <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f7f7f7;
@@ -14,33 +14,81 @@
             box-sizing: border-box;
         }
 
-        .six {
-            background-color: #229091;
-            color: #fff;
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            text-align: center;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        li.logo {
+            margin-right: auto;
+        }
+
+        button {
+            --c: #229091; /* the color*/
+            box-shadow: 0 0 0 .1em inset var(--c);
+            --_g: linear-gradient(var(--c) 0 0) no-repeat;
+            background:
+                var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+                var(--_g) calc(200% - var(--_p, 0%)) 0%,
+                var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+                var(--_g) calc(200% - var(--_p, 0%)) 100%;
+            background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
+            outline-offset: 0.1em;
+            transition: background-size 0.4s, background-position 0s 0.4s;
+            font-family: system-ui, sans-serif;
+            font-size: 1.2rem; /* Adjust the font size as needed */
+            cursor: pointer;
+            padding: 0.5em 1em; /* Adjust the padding as needed */
+            line-height: 1; /* Set line-height to 1 for reduced height */
+            font-weight: bold;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        button:hover {
+            --_p: 100%;
+            transition: background-position .4s, background-size 0s;
+        }
+
+        button:active {
+            box-shadow: 0 0 9e9q inset #0009;
+            background-color: var(--c);
+            color: #fff;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        span {
-            display: block;
-            font-size: 1.5em;
-        }
-
-        h2 {
-            font-size: 1.2em;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        h3 {
-            font-size: 1.5em;
+            font-size: 2.8em;
+            margin: 20px 0;
+            text-align: center;
             color: #229091;
-            margin-top: 30px;
+        }
+
+        h2,
+        h3 {
+            font-size: 1.8em;
+            color: #229091;
+            text-align: center;
         }
 
         ol {
@@ -48,24 +96,23 @@
         }
 
         li {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 10px;
+            font-size: 1.4em;
+            line-height: 1.8;
+            margin-bottom: 15px;
         }
     </style>
-
 </head>
 <body>
 
 <div class="container">
     <div class="menu">
         <ul>
-            <img src="alpine-3400788_1280.jpeg" width="700" height="500">
+                    <img src="alpine-3400788_1280.jpeg" width="700" height="500">
 
-            <button><a href="solar.html">SOLAR</a></button>
-            <button><a href="energy.html">E N E R G Y</a></button>
-            <button><a href="gardening.html">G A R D E N I N G</a></button>
-            <button><a href="references.html">R E F E R E N C E S</a></button>
+            <li><button><a href="solar.html">SOLAR</a></button></li>
+            <li><button><a href="energy.html">E N E R G Y</a></button></li>
+            <li><button><a href="gardening.html">G A R D E N I N G</a></button></li>
+            <li><button><a href="references.html">R E F E R E N C E S</a></button></li>
         </ul>
     </div>
 </div>
